@@ -2,34 +2,15 @@
 
 int main()
 {
+    // The const keyword is used to declare a constant variable.
 
-    // int is integers
-    int x = 1;
-    int y = 12;
+    const double PI = 3.14159;
+    double radius = 5.0;
+    double circumference = 2 * PI * radius;
 
-    // double is decimal numbers
-    double decimal = 12.2;
-    double amount = 32.5;
+    std::cout << circumference << "cm";
 
-    // char that is for single character
-    char grade = 'A';
-    char initial = 'B';
-
-    // boolean that is (T or F)
-    bool isTrue = true;
-    bool isFalse = false;
-
-    // string (objects that represent a sequence of text)
-    std::string name = "John";
-    std::string surname = "Doe";
-
-    std::cout << surname << "\n";
-    std::cout << "Hellow " << name << " How are you" << "\n";
-
-    // cout means - character output
-    std::cout << x + y << "\n";
-    std::cout << decimal << "\n";
-    std::cout << amount << "\n";
+    const int x = 10;
 
     return 0;
 }
