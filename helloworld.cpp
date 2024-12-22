@@ -1,16 +1,23 @@
 #include <iostream>
 
+namespace first
+{
+    int x = 1;
+}
+namespace second
+{
+    int x = 2;
+}
+
 int main()
 {
-    // The const keyword is used to declare a constant variable.
+    using namespace std; // provides a solution for preventing name conflicts in large projects.
 
-    const double PI = 3.14159;
-    double radius = 5.0;
-    double circumference = 2 * PI * radius;
+    int x = 0;
 
-        std::cout << circumference << "cm";
+    std::cout << second::x; // THis second :: is also known as the scoped resolution operator
 
-    const int x = 10;
+    cout << x; // This will print 0 because we are using the std namespace and the variable x
 
     return 0;
 }
