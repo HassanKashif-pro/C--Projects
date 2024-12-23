@@ -1,23 +1,18 @@
 #include <iostream>
+#include <vector>
 
-namespace first
-{
-    int x = 1;
-}
-namespace second
-{
-    int x = 2;
-}
+typedef std::vector<std::pair<std::string, int>> PairList; // This massive line is the definition of PairList
+using text_1 = std::string;                                // now a days keyword "using" is mostly used instead of typedef as it work better with templates.
+using number_1 = int;
 
 int main()
 {
-    using namespace std; // provides a solution for preventing name conflicts in large projects.
+    // typedef = reserved keyword used to create an additional name alias for a type.
+    // increases readability and prevents typos.
 
-    int x = 0;
+    text_1 firstname = "BRO";
+    number_1 age = 21;
 
-    std::cout << second::x; // THis second :: is also known as the scoped resolution operator
-
-    cout << x; // This will print 0 because we are using the std namespace and the variable x
-
-    return 0;
+    std::cout << firstname << std::endl;
+    std::cout << age << std::endl;
 }
