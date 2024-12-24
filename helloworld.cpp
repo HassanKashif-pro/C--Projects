@@ -1,22 +1,18 @@
 #include <iostream>
+#include <string> // For std::string
 
 int main()
 {
+    std::string name;
+    int age;
 
-    // There are arithmetic operators just like any other programming language  *, +, -, / and %
+    std::cout << "What's Your Age? ";
+    std::cin >> age;
 
-    int a = 5;
-    int b = 10;
+    std::cout << "What's your name? ";
+    std::getline(std::cin >> std::ws, name); // Get line is used to get the whole line with white spaces.
 
-    int students = 22;
+    std::cout << "Hello, " << name << "!" << std::endl;
 
-    // 1. Parantheces
-    // 2. Multiplication
-    // 3. Division
-    // 4. Addition & Subtraction
-
-    students += 1;
-    students -= 33;
-
-    std::cout << students;
+    return 0;
 }
