@@ -4,44 +4,21 @@ using namespace std;
 
 int main()
 {
-    char op;
-    double num1;
-    double num2;
-    double result;
+    // ternary operator ?= replacement to if/else statement
+    // condition ? expression1 : expression 2;
 
-    cout << "_________CALCULATOR__________" << "\n";
+    int grade = 75;
+    int num;
+    bool hungry;
 
-    cout << "Enter and operation (+, -, *, /): ";
-    cin >> op;
+    grade >= 70 ? std::cout << "Pass" << "\n" : std::cout << "Fail" << "\n";
 
-    cout << "Enter number one: ";
-    cin >> num1;
+    cout << "Write any number: ";
+    cin >> num;
 
-    cout << "Enter number two: ";
-    cin >> num2;
+    num % 2 == 0 ? cout << "Even" : cout << "Odd";
 
-    switch (op)
-    {
-    case '+':
-        result = num1 + num2;
-        cout << "result: " << result << "\n";
-        break;
-    case '-':
-        result = num1 - num2;
-        cout << "result: " << result << "\n";
-        break;
-    case '*':
-        result = num1 * num2;
-        cout << "result: " << result << "\n";
-        break;
-    case '/':
-        result = num1 / num2;
-        cout << "result: " << result << "\n";
-        break;
-    default:
-        cout << "Please Enter a Valid Operator.";
-        break;
-    }
+    cout << (hungry ? "Your R hungry" : "Your R Full");
 
-    cout << "_____________________________";
+    return 0;
 }
