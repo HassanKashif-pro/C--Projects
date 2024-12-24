@@ -1,25 +1,47 @@
 #include <iostream>
 
+using namespace std;
+
 int main()
 {
-    int month;
+    char op;
+    double num1;
+    double num2;
+    double result;
 
-    std::cout << "Enter a month (1-12): ";
-    std::cin >> month;
+    cout << "_________CALCULATOR__________" << "\n";
 
-    switch (month)
+    cout << "Enter and operation (+, -, *, /): ";
+    cin >> op;
+
+    cout << "Enter number one: ";
+    cin >> num1;
+
+    cout << "Enter number two: ";
+    cin >> num2;
+
+    switch (op)
     {
-    case 1:
-        std::cout << "It is January";
+    case '+':
+        result = num1 + num2;
+        cout << "result: " << result << "\n";
         break;
-        {
-        case 2:
-            std::cout << "It is February";
-            break;
-
-        default:
-            std::cout << "And So on just like that";
-            break;
-        }
+    case '-':
+        result = num1 - num2;
+        cout << "result: " << result << "\n";
+        break;
+    case '*':
+        result = num1 * num2;
+        cout << "result: " << result << "\n";
+        break;
+    case '/':
+        result = num1 / num2;
+        cout << "result: " << result << "\n";
+        break;
+    default:
+        cout << "Please Enter a Valid Operator.";
+        break;
     }
+
+    cout << "_____________________________";
 }
