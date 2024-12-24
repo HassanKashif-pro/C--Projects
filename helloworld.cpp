@@ -3,18 +3,23 @@
 
 int main()
 {
-    double x, y, z;
-    x = 21.32;
-    y = 3;
+    // if statements in C++
 
-    // z = std::max(x, y)
-    // z = std::min(x, y);
-    // z = pow(3, 4);
-    // z = sqrt(x);
-    // z = abs(-4);
-    // z = round(x);
+    int age;
 
-    // THer are many more maths functions you an see at (cplusplus.com/maths)
+    std::cout << "Enter your age: ";
+    std::cin >> age;
 
-    std::cout << z;
+    if (age >= 18)
+    {
+        std::cout << "You are an adult.";
+    }
+    else if (age <= 0)
+    {
+        std::cout << "You are not born yet.";
+    }
+    else
+    {
+        std::cout << "You are a minor.";
+    }
 }
