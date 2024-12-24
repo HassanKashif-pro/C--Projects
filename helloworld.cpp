@@ -1,25 +1,25 @@
 #include <iostream>
-#include <cmath>
 
 int main()
 {
-    // if statements in C++
+    int month;
 
-    int age;
+    std::cout << "Enter a month (1-12): ";
+    std::cin >> month;
 
-    std::cout << "Enter your age: ";
-    std::cin >> age;
+    switch (month)
+    {
+    case 1:
+        std::cout << "It is January";
+        break;
+        {
+        case 2:
+            std::cout << "It is February";
+            break;
 
-    if (age >= 18)
-    {
-        std::cout << "You are an adult.";
-    }
-    else if (age <= 0)
-    {
-        std::cout << "You are not born yet.";
-    }
-    else
-    {
-        std::cout << "You are a minor.";
+        default:
+            std::cout << "And So on just like that";
+            break;
+        }
     }
 }
