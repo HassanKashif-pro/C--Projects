@@ -1,18 +1,20 @@
 #include <iostream>
-#include <string> // For std::string
+#include <cmath>
 
 int main()
 {
-    std::string name;
-    int age;
+    double x, y, z;
+    x = 21.32;
+    y = 3;
 
-    std::cout << "What's Your Age? ";
-    std::cin >> age;
+    // z = std::max(x, y)
+    // z = std::min(x, y);
+    // z = pow(3, 4);
+    // z = sqrt(x);
+    // z = abs(-4);
+    // z = round(x);
 
-    std::cout << "What's your name? ";
-    std::getline(std::cin >> std::ws, name); // Get line is used to get the whole line with white spaces.
+    // THer are many more maths functions you an see at (cplusplus.com/maths)
 
-    std::cout << "Hello, " << name << "!" << std::endl;
-
-    return 0;
+    std::cout << z;
 }
