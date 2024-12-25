@@ -5,15 +5,34 @@ using namespace std;
 
 int main()
 {
-    srand(time(NULL));
+    srand(time(0));
+    int randNum = rand() % 5 + 1;
 
-    int num1 = (rand() % 100) + 1; // 100 is the max value for rand()
-    int num2 = (rand() % 100) + 1; // + 1 is used to fix the problem that rand() returns 0 sometimes
-    int num3 = (rand() % 100) + 1;
+    switch (randNum)
+    {
+    case 1:
+        cout << "You win a bumper sticker!" << endl;
+        break;
+    case 2:
+        cout << "You win a T-shirt!" << endl;
 
-    cout << num1 << endl;
-    cout << num2 << endl;
-    cout << num3 << endl;
+        break;
+    case 3:
+        cout << "You win a Free Lunch!" << endl;
+
+        break;
+    case 4:
+        cout << "You win a gift card!" << endl;
+
+        break;
+    case 5:
+        cout << "You win a concert ticket!" << endl;
+
+        break;
+
+    default:
+        break;
+    }
 
     return 0;
 }
