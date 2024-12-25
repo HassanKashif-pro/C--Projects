@@ -4,10 +4,28 @@ using namespace std;
 
 int main()
 {
-    for (int i = 1; i <= 5; i += 2) // (initial value , condition, increment/ decrement)
+    // Nested Loop and loops within other loops.
+    int column;
+    int row;
+    char symbol;
+
+    cout << "How many rows?: ";
+    cin >> row;
+
+    cout << "How many columns?: ";
+    cin >> column;
+
+    cout << "Enter a symbol";
+    cin >> symbol;
+
+    for (int i = 0; i < row; i++)
     {
-        cout << "Hey Ma Botha" << endl;
+        for (int j = 0; j < column; j++)
+        {
+            cout << symbol << " ";
+        }
+        cout << "\n";
     }
-    cout << "  How are YOU ??   "; // Print when escape the for loop
+
     return 0;
 }
