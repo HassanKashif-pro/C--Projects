@@ -4,19 +4,10 @@ using namespace std;
 
 int main()
 {
-
-    string name;
-    while (name.empty()) // a While loop runs the code until the condition remains True When it is False it is stopped.
+    for (int i = 1; i <= 5; i += 2) // (initial value , condition, increment/ decrement)
     {
-        cout << "Enter your name: ";
-        std::getline(std::cin, name);
+        cout << "Hey Ma Botha" << endl;
     }
-    cout << "Hello, " << name << endl;
-
-    while (1 == 1)
-    {
-        cout << " HELP ME ! ";
-    }
-
+    cout << "  How are YOU ??   "; // Print when escape the for loop
     return 0;
 }
