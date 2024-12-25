@@ -1,31 +1,19 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
 int main()
 {
-    // Nested Loop and loops within other loops.
-    int column;
-    int row;
-    char symbol;
+    srand(time(NULL));
 
-    cout << "How many rows?: ";
-    cin >> row;
+    int num1 = (rand() % 100) + 1; // 100 is the max value for rand()
+    int num2 = (rand() % 100) + 1; // + 1 is used to fix the problem that rand() returns 0 sometimes
+    int num3 = (rand() % 100) + 1;
 
-    cout << "How many columns?: ";
-    cin >> column;
-
-    cout << "Enter a symbol";
-    cin >> symbol;
-
-    for (int i = 0; i < row; i++)
-    {
-        for (int j = 0; j < column; j++)
-        {
-            cout << symbol << " ";
-        }
-        cout << "\n";
-    }
+    cout << num1 << endl;
+    cout << num2 << endl;
+    cout << num3 << endl;
 
     return 0;
 }
