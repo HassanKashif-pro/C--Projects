@@ -3,36 +3,21 @@
 
 using namespace std;
 
-int main()
+void happyBirthday(std::string name, int age); // We need a function declaration because we are using it before it is defined
+
+int main() // Function called should be written before the main function
 {
-    srand(time(0));
-    int randNum = rand() % 5 + 1;
+    std::string name = "Hassan";
+    int age = 21;
 
-    switch (randNum)
-    {
-    case 1:
-        cout << "You win a bumper sticker!" << endl;
-        break;
-    case 2:
-        cout << "You win a T-shirt!" << endl;
-
-        break;
-    case 3:
-        cout << "You win a Free Lunch!" << endl;
-
-        break;
-    case 4:
-        cout << "You win a gift card!" << endl;
-
-        break;
-    case 5:
-        cout << "You win a concert ticket!" << endl;
-
-        break;
-
-    default:
-        break;
-    }
+    happyBirthday(name, age); // Calling a function...call it as many times as you want
 
     return 0;
+}
+// function is a reuseable block of code
+
+void happyBirthday(std::string name, int age) // you can make other functions be aware of variable by passing in as a variable.
+{
+    cout << "Happy Birthday to you!" << endl;
+    cout << "Happy Birthday to you!" << endl;
 }
