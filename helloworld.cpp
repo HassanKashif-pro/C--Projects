@@ -1,20 +1,25 @@
 #include <iostream>
 
-double square(double length);
+void bakePizza();
+void bakePizza(std ::string topping1); // functions can have same names but different arguments.
+void bakePizza(std::string topping2, std::string topping1);
+// functions must
 
 int main()
 {
-    // return : returns a value back to the spot
-    // where the function was called from
-
-    double length = 5.1;
-    double area = square(length);
-
-    std::cout << "Area: " << area << std::endl;
+    bakePizza("Lemon", "Pineapple");
 
     return 0;
 }
-double square(double length) // double is used instead of a void because we are returning a value of type double
+void bakePizza()
 {
-    return length * length;
+    std::cout << "Baking pizza..." << std::endl;
+}
+void bakePizza(std::string topping1)
+{
+    std::cout << "Baking pizza...with" << topping1 << std::endl;
+}
+void bakePizza(std::string topping2, std::string topping1)
+{
+    std::cout << "Baking pizza...with " << topping1 << " and " << topping2 << "\n";
 }
