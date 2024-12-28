@@ -1,95 +1,22 @@
 #include <iostream>
-#include <iomanip>
-
-void showBalance(double balance);
-double withdraw(double balance);
-double deposit();
 
 int main()
 {
-    double balance = 0;
-    int choice = 0;
+    // arrays = are data structure that can hold multiple values
+    //          values are accessed by an index number
+    //          "kinda like a variable which holds multiple values"
 
-    do
-    {
+    std::string car[] = {"Corvette",
+                         "Camry",
+                         "Suzuki"}; // it should be of the same data type like string..number
 
-        std::cout << "___________________\n";
-        std::cout << "Enter your choice:\n";
-        std::cout << "___________________\n";
-        std::cout << "1. Show Balance \n";
-        std::cout << "2. Deposit Money \n";
-        std::cout << "3. Withdraw Money \n";
-        std::cout << "4. Exit\n";
-        std::cin >> choice;
+    std::string flower[1]; // You must assign the size of the array
 
-        std::cin.clear(); // clears the input when invalid keywords like 'pizaa' is written down
-        fflush(stdin);
+    flower[0] = "Rose"; // you can assign values after the decelerations of the array
+    flower[1] = "Tulip";
 
-        switch (choice)
-        {
-        case 1:
-            showBalance(balance);
-            break;
-        case 2:
-            balance += deposit();
-            showBalance(balance);
-            break;
-        case 3:
-            balance -= withdraw(balance);
-            showBalance(balance);
-            break;
-        case 4:
-            std::cout << "Thanks for visiting out branch\n";
-            break;
-        default:
-            std::cout << "Invalid Key bind";
-            break;
-        }
-    } while (choice != 4);
-}
-void showBalance(double balance)
-{
-    std::cout << "Your balance is $" << std::setprecision(2) << std::fixed << balance << "\n";
-}
-double withdraw(double balance)
-{
-    double amount = 0;
+    car[0] = "Corolla"; // This is used to rename the elements in the array.
 
-    std::cout << "Enter amount to be withdrawn: ";
-    std::cin >> amount;
-
-    if (amount > balance)
-    {
-        std::cout << "Insufficent funds\n";
-        return 0;
-    }
-    else if (amount < 0)
-    {
-        std::cout << "That is not a valid amount";
-        return 0;
-    }
-    else
-    {
-        return amount;
-    }
-
-    return 0;
-}
-double deposit()
-{
-    double amount = 0;
-
-    std::cout << "Enter amount of deposit: ";
-    std::cin >> amount;
-
-    if (amount > 0)
-    {
-        return amount;
-    }
-    else
-    {
-        return 0;
-    }
-
-    return amount;
+    std::cout << car[1]; // this will print the index 1 element in the array
+    std::cout << car;    // this will show the memory location of this array.
 }
