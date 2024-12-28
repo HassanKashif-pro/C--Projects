@@ -2,16 +2,12 @@
 
 int main()
 {
-    // sizeof() = used to find the size of a variable, data type, class
-    //              or object in bytes...
+    std::string students[] = {"Bob", "Sandy", "Jack", "Micheal"};
 
-    std::string name = "Ma N"; // always 32 bytes bcz it is the locations size
-    double pi = 20.1;
-    char grade = 'F'; // 1 byte
-    std::string students[] = {"Ali", "Hassan", "Jack"};
+    for (int i = 0; i < sizeof(students) / sizeof(std::string); i++) // This is a good way of printing out all the elements in an array
+    {
+        std::cout << students[i] << "\n";
+    } // iterating over an array using for loop and sizeof()
 
-    std::cout << sizeof(students) / sizeof(std::string) << "elements\n"; // This is a trick
-    // to find the size of an array using sizeof
-
-    std::cout << sizeof(name) << " Bytes";
+    return 0;
 }
