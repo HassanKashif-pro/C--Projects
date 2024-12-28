@@ -2,12 +2,14 @@
 
 int main()
 {
-    std::string students[] = {"Bob", "Sandy", "Jack", "Micheal"};
+    // for each = that ease the traversal over an iterable data set.
 
-    for (int i = 0; i < sizeof(students) / sizeof(std::string); i++) // This is a good way of printing out all the elements in an array
+    int grades[] = {65, 43, 76, 89};
+
+    for (int grade : grades)
     {
-        std::cout << students[i] << "\n";
-    } // iterating over an array using for loop and sizeof()
+        std::cout << grade << "\n";
+    }
 
     return 0;
 }
