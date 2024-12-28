@@ -1,25 +1,19 @@
 #include <iostream>
 
-void bakePizza();
-void bakePizza(std ::string topping1); // functions can have same names but different arguments.
-void bakePizza(std::string topping2, std::string topping1);
-// functions must
+void printNum(int myNum)
+
+    int myNum = 2; // you can just make it a global variable.
+// But using it too much will pollute the namespace.
 
 int main()
 {
-    bakePizza("Lemon", "Pineapple");
-
+    // Local variables = declared inside an function or a block()
+    // Global variables = declared outside all function or a block()
+    myNum = 1;
+    printNum();
     return 0;
 }
-void bakePizza()
+void printNum(int myNum) // if yuo want to use a local variable you have to add a identity to it
 {
-    std::cout << "Baking pizza..." << std::endl;
-}
-void bakePizza(std::string topping1)
-{
-    std::cout << "Baking pizza...with" << topping1 << std::endl;
-}
-void bakePizza(std::string topping2, std::string topping1)
-{
-    std::cout << "Baking pizza...with " << topping1 << " and " << topping2 << "\n";
+    std::cout << myNum << std::endl;
 }
