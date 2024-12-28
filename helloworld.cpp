@@ -1,24 +1,40 @@
 #include <iostream>
 
-double getTotal(double prices[], int size);
+void sort(int array[], int size);
+
 int main()
 {
-    double prices[] = {21.32, 42.10, 40.5, 12.5};
-    int size = sizeof(prices) / sizeof(double); // we cannot use the sizeof() in line 18 in the for loop
-    // because when an array is passed in a function it is passed as a pointer so we have to give the size.
-    double total = getTotal(prices);
+    int array[] = {10,
+                   2,
+                   4,
+                   5,
+                   12,
+                   11,
+                   5};
+    int size = sizeof(array) / sizeof(int);
 
-    std::cout << "$" << total;
+    sort(array, size);
+
+    for (int elements : array)
+    {
+        std::cout << elements << " ";
+    }
 
     return 0;
 }
-double getTotal(double prices[], int size) // you can pass an array as an argument.
+void sort(int array[], int size)
 {
-    double total = 0;
-
-    for (int i = 0; i < size; i++) // The size is used as the array is decayed as a pointer.
+    int temp;
+    for (int i = 0; i < size - 1; i++)
     {
-        total += prices[i];
+        for (int j = 0; j < size - i - 1; j++)
+        {
+            if (array[j] > array[j + 1])
+            {
+                temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+            }
+        }
     }
-    return total;
 }
