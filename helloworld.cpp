@@ -2,29 +2,23 @@
 
 int main()
 {
-    std::string foods[5];
-    int size = sizeof(foods) / sizeof(foods[0]);
-    std::string temp;
+    // 2D arrays = an array made up of multiple arrays as elements
+    // They help in representing a grid or matrix of data.
 
-    for (int i = 0; i < size; i++)
+    std::string cars[3][4] = {{"Mustang", "Escape", "F-150"},
+                              {"Corvette", "Equinox", "Silverado"},
+                              {"Challenger", "Durango", "Ram 1500"}}; // 3 rows and 4 columns
+
+    int rows = sizeof(cars) / sizeof(cars[0]);
+    int columns = sizeof(cars[0]) / sizeof(cars[0][0]);
+
+    for (int i = 0; i < rows; i++) // This is how to iterate over a 2D array
     {
-        std::cout << "Enter a food you like or 'q' to quit # " << i << ": ";
-        std::getline(std::cin, temp);
-        if (temp == "q")
+        for (int j = 0; j < columns; j++)
         {
-            break;
+            std::cout << cars[i][j] << " ";
         }
-        else
-        {
-            foods[i] = temp;
-        }
-    }
-
-    std::cout << "You like the following food: \n";
-
-    for (int i = 0; !foods[i].empty(); i++)
-    {
-        std::cout << foods[i] << "\n";
+        std::cout << "\n";
     }
 
     return 0;
