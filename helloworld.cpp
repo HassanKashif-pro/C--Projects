@@ -1,40 +1,31 @@
 #include <iostream>
 
-void sort(int array[], int size);
-
 int main()
 {
-    int array[] = {10,
-                   2,
-                   4,
-                   5,
-                   12,
-                   11,
-                   5};
-    int size = sizeof(array) / sizeof(int);
+    std::string foods[5];
+    int size = sizeof(foods) / sizeof(foods[0]);
+    std::string temp;
 
-    sort(array, size);
-
-    for (int elements : array)
+    for (int i = 0; i < size; i++)
     {
-        std::cout << elements << " ";
+        std::cout << "Enter a food you like or 'q' to quit # " << i << ": ";
+        std::getline(std::cin, temp);
+        if (temp == "q")
+        {
+            break;
+        }
+        else
+        {
+            foods[i] = temp;
+        }
+    }
+
+    std::cout << "You like the following food: \n";
+
+    for (int i = 0; !foods[i].empty(); i++)
+    {
+        std::cout << foods[i] << "\n";
     }
 
     return 0;
-}
-void sort(int array[], int size)
-{
-    int temp;
-    for (int i = 0; i < size - 1; i++)
-    {
-        for (int j = 0; j < size - i - 1; j++)
-        {
-            if (array[j] > array[j + 1])
-            {
-                temp = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = temp;
-            }
-        }
-    }
 }
