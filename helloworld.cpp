@@ -2,24 +2,40 @@
 
 int main()
 {
-    // pointers = variables that stores a memory address.
-    // because sometimes it is just easier to use a pointer than to use a variable.
+    // Dynamic memory that is allocated after the program
+    // is already compiled & running.
+    // Use the 'new' operator to allocate
+    // memory on the heap.
+    //
+    //  Useful when u are unsure of how much memory we will
+    //  need. Makes our program more flexible.
 
-    // & address-of operator
-    // * deference operator
+    int *pNum = NULL;
+    char *pGrades = NULL;
+    int size;
 
-    std::string name = "Ali";
-    int age = 20;
-    std::string freePizzas[5] = {"pizza1", "pizza2", "pizza3", "pizza4", "pizza5"};
+    pNum = new int; // This is how to allocate your memory to the heap and not the stack.
 
-    std::string *pName = &name;
-    int *pAge = &age;
-    std::string *pFreePizzas = freePizzas; // we don't need to use & when working with arrays
+    *pNum = 20; // store any kind of data afterwards
 
-    std::cout << pName << "\n"; // Thi will give the address of the variable
-    std::cout << *pName;        // This will print the value of the variable
-    std::cout << *pAge;
-    std::cout << pFreePizzas;
+    std::cout << "How many grades are there?: ";
+    std::cin >> size;
+
+    pGrades = new char[size];
+
+    for (int i = 0; i < size; i++)
+    {
+        std::cout << "Enter grade " << i + 1 << ": ";
+        std::cin >> pGrades[i];
+    }
+    for (int i = 0; i < size; i++)
+    {
+        std::cout << pGrades[i] << " ";
+    }
+
+    delete[] pGrades;
+    delete pNum; // You need to clear the memory manually afterwards to
+                 // avoid memory leaks. use 'delete' whenever you use 'new'.
 
     return 0;
 }
