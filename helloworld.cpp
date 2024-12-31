@@ -1,61 +1,25 @@
 #include <iostream>
-#include <string>
-
-int getDigit(const int number);
-int sumOddDigits(const std::string &cardNumber);
-int sumEvenDigits(const std::string &cardNumber);
 
 int main()
 {
-    // Program to verify a credit card number
-    std::string cardNumber;
-    int result = 0;
+    // pointers = variables that stores a memory address.
+    // because sometimes it is just easier to use a pointer than to use a variable.
 
-    std::cout << "Enter a credit card #: ";
-    std::cin >> cardNumber;
+    // & address-of operator
+    // * deference operator
 
-    result = sumEvenDigits(cardNumber) + sumOddDigits(cardNumber);
+    std::string name = "Ali";
+    int age = 20;
+    std::string freePizzas[5] = {"pizza1", "pizza2", "pizza3", "pizza4", "pizza5"};
 
-    if (result % 10 == 0)
-    {
-        std::cout << cardNumber << " is valid\n";
-    }
-    else
-    {
-        std::cout << cardNumber << " is NOT valid\n";
-    }
+    std::string *pName = &name;
+    int *pAge = &age;
+    std::string *pFreePizzas = freePizzas; // we don't need to use & when working with arrays
+
+    std::cout << pName << "\n"; // Thi will give the address of the variable
+    std::cout << *pName;        // This will print the value of the variable
+    std::cout << *pAge;
+    std::cout << pFreePizzas;
 
     return 0;
-}
-
-int getDigit(const int number)
-{
-    // If the number is a two-digit number, return the sum of its digits
-    return number % 10 + number / 10;
-}
-
-int sumOddDigits(const std::string &cardNumber)
-{
-    int sum = 0;
-
-    // Start from the rightmost digit and process every odd-indexed digit
-    for (int i = cardNumber.size() - 1; i >= 0; i -= 2)
-    {
-        sum += cardNumber[i] - '0'; // Convert char to int
-    }
-
-    return sum;
-}
-
-int sumEvenDigits(const std::string &cardNumber)
-{
-    int sum = 0;
-
-    // Start from the second-to-last digit and process every even-indexed digit
-    for (int i = cardNumber.size() - 2; i >= 0; i -= 2)
-    {
-        sum += getDigit((cardNumber[i] - '0') * 2); // Convert char to int, double it, and sum the digits
-    }
-
-    return sum;
 }
