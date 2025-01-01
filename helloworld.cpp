@@ -1,16 +1,22 @@
 #include <iostream>
-template <typename T, typename U>
 
-// Use the 'auto' to show double dispatch
+// struct = A structure that group related variables under one name.
 
-auto max(T x, U y) // This is a function template where you can
-                   // set this type to T which is a lot of things like char, string, int...
+struct helloworld
 {
-    return (x > y) ? x : y;
-}
+    std::string name;
+    double gpa;
+    bool enrolled;
+};
+
 int main()
 {
-    std::cout << max(1, 2.1) << '\n'; // Only accept all arguments of the same type .. inless you are using
-    // different types like T and U
+    helloworld student;
+    student.name = "John";
+    student.gpa = 3.5;
+    student.enrolled = true;
+
+    std::cout << "Name: " << student.name << std::endl;
+
     return 0;
 }
