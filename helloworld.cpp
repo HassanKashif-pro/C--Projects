@@ -1,38 +1,39 @@
 #include <iostream>
 
-// struct = A structure that group related variables under one name.
-
-struct Car
+class Human
 {
-    int year;
-    std::string model;
-    std::string color;
+public:
+    std::string name;
+    std::string occupation;
+    int age;
+
+    void eat()
+    {
+        std::cout << name << " is eating." << std::endl;
+    }
+    void drink()
+    {
+        std::cout << name << " is drinking." << std::endl;
+    }
 };
-void printCar(Car &car);
 
 int main()
 {
-    Car car1;
-    Car car2;
+    // object = A collection of attributes and methods
+    //          They can have characteristics and could perform actions
+    //          Created from a class which as a "Blue-print"
 
-    car1.model = "Mustang";
-    car1.year = 1999;
-    car1.color = "red";
+    Human human1;
 
-    car2.model = "GTR";
-    car2.year = 2020;
-    car2.color = "blue";
+    human1.name = "Rick";
+    human1.occupation = "Teacher";
+    human1.age = 31;
 
-    std::cout << &car1 << '\n'; // This will print the memory address of car1
-    // which is not same as the one on line 33
-    printCar(car1); // Structs are pass by value
-    printCar(car2); // Structs are pass by value
+    std::cout << human1.name << std::endl;
+    std::cout << human1.occupation << std::endl;
+    std::cout << human1.age << std::endl;
 
+    human1.eat();
+    human1.drink();
     return 0;
-}
-void printCar(Car &car) // you need to add address-of to give the same
-// memory address to the function
-{
-    std::cout << &car << '\n';
-    std::cout << "Model: " << car.model << std::endl;
 }
