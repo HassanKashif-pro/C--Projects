@@ -1,39 +1,41 @@
 #include <iostream>
+using namespace std;
 
-class Human
+// Define a class named Car
+class Car
 {
 public:
-    std::string name;
-    std::string occupation;
-    int age;
+    string brand;
+    string model;
+    int year;
 
-    void eat()
+    // Constructor to initialize the Car object
+    Car(string b, string m, int y)
     {
-        std::cout << name << " is eating." << std::endl;
+        brand = b;
+        model = m;
+        year = y;
     }
-    void drink()
+
+    // Method to display car details
+    void displayInfo()
     {
-        std::cout << name << " is drinking." << std::endl;
+        cout << "Brand: " << brand << ", Model: " << model << ", Year: " << year << endl;
     }
 };
 
 int main()
 {
-    // object = A collection of attributes and methods
-    //          They can have characteristics and could perform actions
-    //          Created from a class which as a "Blue-print"
+    // Constructor = special method automatically called when
+    // an object is instantiated; useful for assigning values to attributes.
 
-    Human human1;
+    // Creating objects of Car class using the constructor
+    Car car1("Toyota", "Camry", 2020);
+    Car car2("Honda", "Civic", 2019);
 
-    human1.name = "Rick";
-    human1.occupation = "Teacher";
-    human1.age = 31;
+    // Displaying the information of both cars
+    car1.displayInfo();
+    car2.displayInfo();
 
-    std::cout << human1.name << std::endl;
-    std::cout << human1.occupation << std::endl;
-    std::cout << human1.age << std::endl;
-
-    human1.eat();
-    human1.drink();
     return 0;
 }
