@@ -1,41 +1,96 @@
 #include <iostream>
 using namespace std;
 
-// Define a class named Car
-class Car
+// Class demonstrating abstraction with getters and setters
+class BankAccount
 {
-public:
-    string brand;
-    string model;
-    int year;
+private:
+    double balance; // Private attribute, hidden from outside access
 
-    // Constructor to initialize the Car object
-    Car(string b, string m, int y)
+public:
+    // Constructor to initialize balance
+    BankAccount(double initialBalance)
     {
-        brand = b;
-        model = m;
-        year = y;
+        if (initialBalance >= 0)
+        {
+            balance = initialBalance;
+        }
+        else
+        {
+            balance = 0;
+            cout << "Invalid initial balance. Setting balance to 0." << endl;
+        }
     }
 
-    // Method to display car details
-    void displayInfo()
+    // Getter: Provides read-only access to the balance
+    double getBalance()
     {
-        cout << "Brand: " << brand << ", Model: " << model << ", Year: " << year << endl;
+        return balance;
+    }
+
+    // Setter: Allows controlled modification of the balance
+    void setBalance(double amount)
+    {
+        if (amount >= 0)
+        {
+            balance = amount;
+        }
+        else
+        {
+            cout << "Invalid amount. Balance cannot be negative." << endl;
+        }
+    }
+
+    // Method to deposit money
+    void deposit(double amount)
+    {
+        if (amount > 0)
+        {
+            balance += amount;
+            cout << "Deposited: $" << amount << endl;
+        }
+        else
+        {
+            cout << "Invalid deposit amount." << endl;
+        }
+    }
+
+    // Method to withdraw money
+    void withdraw(double amount)
+    {
+        if (amount > 0 && amount <= balance)
+        {
+            balance -= amount;
+            cout << "Withdrawn: $" << amount << endl;
+        }
+        else
+        {
+            cout << "Invalid withdrawal amount." << endl;
+        }
     }
 };
 
 int main()
 {
-    // Constructor = special method automatically called when
-    // an object is instantiated; useful for assigning values to attributes.
+    // Create a BankAccount object with an initial balance
+    BankAccount account(500);
 
-    // Creating objects of Car class using the constructor
-    Car car1("Toyota", "Camry", 2020);
-    Car car2("Honda", "Civic", 2019);
+    // Access balance using the getter
+    cout << "Current Balance: $" << account.getBalance() << endl;
 
-    // Displaying the information of both cars
-    car1.displayInfo();
-    car2.displayInfo();
+    // Attempt to set a new balance using the setter
+    account.setBalance(1000);
+    cout << "Updated Balance: $" << account.getBalance() << endl;
+
+    // Deposit and withdraw operations
+    account.deposit(250);
+    cout << "Balance after deposit: $" << account.getBalance() << endl;
+
+    account.withdraw(300);
+    cout << "Balance after withdrawal: $" << account.getBalance() << endl;
+
+    // Attempt to set an invalid balance
+    account.setBalance(-500); // Should trigger validation in setter
 
     return 0;
 }
